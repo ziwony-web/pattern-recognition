@@ -1,6 +1,6 @@
 # Online News Popularity Prediction
 
-## Project Overview
+## 1. Project Overview
 - 온라인 뉴스 기사의 메타데이터와 콘텐츠 특성을 기반으로 해당 기사가 인기 있을지 여부를 예측하는 이진분류 모델을 개발한 프로젝트입니다.
 
 ## 2. Problem Definition
