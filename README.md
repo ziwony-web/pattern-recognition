@@ -39,15 +39,25 @@
 - 어떤 모델이 가장 좋았는지
 - 왜 그런 결과가 나왔는지
 
-## 8. My Contribution
-- 내가 맡은 역할 1
-- 내가 맡은 역할 2
-- 내가 맡은 역할 3
+## My Contribution
+- This project was conducted as a team project for a Pattern Recognition course.
+My contributions included participating in data preprocessing, model experimentation, performance comparison, and report preparation.
+
+Main contributions:
+
+- Participated in preprocessing strategy design
+- Compared Random Forest and XGBoost model performance
+- Analyzed feature importance results
+- Contributed to the final report and discussion section
 
 ## 9. Limitations & Future Work
-- 데이터 한계
-- 모델 한계
-- 개선하고 싶은 점
+This project had several limitations
+
+- Only the original features were used, with limited feature engineering.
+- Class imbalance was not fully addressed.
+- Interaction features such as kw_avg_avg × global_subjectivity were not included.
+- Advanced interpretability methods such as SHAP or LIME were not applied.
+- Deep learning-based models were not explored.
 
 ## 10. Tech Stack
 - Python
