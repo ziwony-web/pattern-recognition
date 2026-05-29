@@ -36,6 +36,10 @@ The final model was selected based not only on validation performance but also o
 | Random Forest | 0.6788 | 0.6846 | 0.7520 | 0.7051 |
 | XGBoost | 0.6587 | 0.7001 | 0.7243 | 0.6944 |
 
+Although Random Forest achieved a higher validation score, its performance decreased noticeably on the test dataset.  
+XGBoost showed a smaller gap between validation and test performance, indicating better generalization ability.
+
+Therefore, XGBoost was selected as the final model.
 
 ## 7. Key Findings
 - 어떤 feature가 결과에 영향을 주었는지
