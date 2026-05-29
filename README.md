@@ -15,6 +15,11 @@ Built a binary classification model to predict whether a news article will be sh
 
 ---
 
+## Team Members
+- Yunwoo Choi, Seojeong Cho, Ingyeong Yang, Jiwon Kang
+
+---
+
 ## Results
 
 | Model | Accuracy | F1 Score | AUC | Avg Score |
@@ -77,11 +82,22 @@ Both models consistently ranked the following feature groups as most important:
 
 ## My Contribution
 
-- Participated in designing the preprocessing strategy (missing value handling)
-- Ran experiments comparing Random Forest and XGBoost; analyzed performance trade-offs
-- Interpreted feature importance results across both models
-- Contributed to the final report and Discussion section
+### 🔧 Data Preprocessing (Full Ownership)
+Solely responsible for the entire preprocessing pipeline across all 46 features:
+- Designed and applied **5 distinct missing value strategies** based on each feature's distribution and semantic meaning (e.g., neutral fill for sentiment, mode for categorical, median for skewed numerals)
+- Implemented **One-Hot Encoding** for 3 categorical variables (`weekday`, `data_channel`, `is_weekend`)
+- Applied **1–99th percentile clipping** for outlier suppression in the XGBoost pipeline
 
+### 🤖 Model Development (Both Models)
+Built and tuned both classification models end-to-end:
+- **Random Forest**: Ran GridSearchCV over **48 hyperparameter combinations** (3-fold CV); identified best config (`n_estimators=200`, `max_depth=22`, `max_features='log2'`); tuned threshold across 3 values (0.48 / 0.50 / 0.52) → best F1 at **0.48**
+- **XGBoost**: Conducted 5-fold CV with a grid of 54 combinations across 5 hyperparameters; performed threshold sweep → optimal at **0.414**, lifting Recall under class imbalance
+- Compared train vs. test performance gap between models → identified XGBoost as the more generalizable choice (gap: RF **0.043** vs. XGB **0.012**)
+
+### 📊 Analysis & Reporting
+- Analyzed and interpreted Top-15 feature importances for both models
+- Documented key finding: semantic features (topic, sentiment, keywords) outweigh structural features (length, format) in predicting shareability
+- Wrote the Discussion and Conclusion sections of the final report
 ---
 
 ## Limitations & Future Work
@@ -100,4 +116,3 @@ Both models consistently ranked the following feature groups as most important:
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white)
 ![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat&logo=numpy&logoColor=white)
 ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat&logo=jupyter&logoColor=white)
-
