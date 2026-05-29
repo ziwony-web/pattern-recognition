@@ -1,21 +1,19 @@
 # Online News Popularity Prediction
 
-## 1. Project Overview
-- 온라인 뉴스 기사의 메타데이터와 콘텐츠 특성을 기반으로 해당 기사가 인기 있을지 여부를 예측하는 이진분류 모델을 개발한 프로젝트입니다.
 
-## 2. Problem Definition
-- 입력 데이터:
-- 예측 대상:
-- 문제 유형: Binary Classification / Regression
-- 활용 가능성:
+## Team Members
+- Yunwoo Choi, Seojeong Cho, Ingyeong Yang, Jiwon Kang
 
-## 3. Dataset
-- 데이터 출처:
-- 데이터 기간:
-- 주요 변수:
-- target 변수:
+## Project Overview
+- This project has developed a binary classification model that predicts whether or not an online news article will be popular based on the metadata and content characteristics of it.
 
-## 4. Methodology
+## Project Objective
+- Dataset: 22,200 samples with 46 features (approx. 10% missing values).
+- Target Variable: y=1 (Popular, >1,400 shares), y=0 (Not popular)
+- Goal: Build a binary classification model to predict news popularity.
+
+
+## Methodology
 1. 데이터 수집
 2. 데이터 전처리
 3. EDA
