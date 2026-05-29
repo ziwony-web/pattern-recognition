@@ -1,11 +1,14 @@
 # Online News Popularity Prediction
 
+## Project Overview
+This project aims to predict whether an online news article will become popular based on its metadata and content-related features.
+The task was formulated as a binary classification problem, where an article is classified as popular if it receives more than 1,400 shares.
+
+The project compares two tree-based machine learning models, Random Forest and XGBoost, and analyzes their performance using Accuracy, F1 Score, and AUC.
+The final model was selected based not only on validation performance but also on generalization ability on the test dataset.
 
 ## Team Members
 - Yunwoo Choi, Seojeong Cho, Ingyeong Yang, Jiwon Kang
-
-## Project Overview
-- This project has developed a binary classification model that predicts whether or not an online news article will be popular based on the metadata and content characteristics of it.
 
 ## Project Objective
 - Dataset: 22,200 samples with 46 features (approx. 10% missing values).
