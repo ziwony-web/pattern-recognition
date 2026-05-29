@@ -1,0 +1,25 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+.venv/
+
+# Environment variables
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Large raw data files
+data/raw/*
+data/processed/*
+
+# Keep empty data folders
+!data/raw/.gitkeep
+!data/processed/.gitkeep
