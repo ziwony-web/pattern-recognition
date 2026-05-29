@@ -24,13 +24,13 @@ The final model was selected based not only on validation performance but also o
 5. 성능 평가
 6. 결과 해석
 
-## 5. Models
+## Models
 - Logistic Regression
 - Random Forest
 - XGBoost
 - SVM
 
-## 6. Results
+## Results
 | Model | Accuracy | F1 Score | AUC | Final Average Score |
 |---|---:|---:|---:|---:|
 | Random Forest | 0.6788 | 0.6846 | 0.7520 | 0.7051 |
@@ -41,7 +41,26 @@ XGBoost showed a smaller gap between validation and test performance, indicating
 
 Therefore, XGBoost was selected as the final model.
 
-## 7. Key Findings
+## Feature Importance Analysis
+
+Feature importance analysis showed that the following types of features played an important role in predicting article popularity:
+
+Keyword score features such as kw_avg_avg, kw_avg_max, and kw_min_avg
+Topic distribution features such as LDA_02, LDA_01, and LDA_00
+Sentiment-related features such as global_subjectivity, global_sentiment_polarity, and global_rate_positive_words
+Lexical diversity features such as n_unique_tokens
+
+These results suggest that article popularity is influenced not only by article length or format, but also by semantic topic patterns, emotional tone, and keyword quality.
+
+### Random Forest Feature Importance
+
+![Random Forest Feature Importance](results/figures/random_forest_feature_importance.png)
+
+### XGBoost Feature Importance
+
+![XGBoost Feature Importance](results/figures/xgboost_feature_importance.png)
+
+## Key Findings
 - 어떤 feature가 결과에 영향을 주었는지
 - 어떤 모델이 가장 좋았는지
 - 왜 그런 결과가 나왔는지
@@ -57,7 +76,7 @@ Main contributions:
 - Analyzed feature importance results
 - Contributed to the final report and discussion section
 
-## 9. Limitations & Future Work
+## Limitations & Future Work
 This project had several limitations
 
 - Only the original features were used, with limited feature engineering.
@@ -66,7 +85,7 @@ This project had several limitations
 - Advanced interpretability methods such as SHAP or LIME were not applied.
 - Deep learning-based models were not explored.
 
-## 10. Tech Stack
+## Tech Stack
 - Python
 - Pandas
 - NumPy
