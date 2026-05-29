@@ -31,11 +31,11 @@ The final model was selected based not only on validation performance but also o
 - SVM
 
 ## 6. Results
-| Model | Accuracy | Precision | Recall | F1-score | ROC-AUC |
-|---|---:|---:|---:|---:|---:|
-| Logistic Regression |  |  |  |  |  |
-| Random Forest |  |  |  |  |  |
-| XGBoost |  |  |  |  |  |
+| Model | Accuracy | F1 Score | AUC | Final Average Score |
+|---|---:|---:|---:|---:|
+| Random Forest | 0.6788 | 0.6846 | 0.7520 | 0.7051 |
+| XGBoost | 0.6587 | 0.7001 | 0.7243 | 0.6944 |
+
 
 ## 7. Key Findings
 - 어떤 feature가 결과에 영향을 주었는지
