@@ -40,7 +40,7 @@
 - 왜 그런 결과가 나왔는지
 
 ## My Contribution
-- This project was conducted as a team project for a Pattern Recognition course.
+This project was conducted as a team project for a Pattern Recognition course.
 My contributions included participating in data preprocessing, model experimentation, performance comparison, and report preparation.
 
 Main contributions:
