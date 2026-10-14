@@ -2,22 +2,23 @@
 
 **Pattern Recognition · undergraduate team project · tabular binary classification**
 
-Predicting article popularity from content metadata, sentiment, keyword statistics, and topic features. The course dataset is derived from UCI Online News Popularity; the original project describes popularity as more than 1,400 shares. The supplied `y` labels are used directly in the code.
+Predicting article popularity from content metadata, sentiment, keyword statistics, and topic features. The course dataset is derived from UCI Online News Popularity; the supplied course CSV confirms `y = 1` exactly when `shares > 1,400` (zero mismatches across 22,200 rows). The supplied `y` labels are used directly in the code.
 
-**Start here:** [Project report](docs/report.pdf) · [Final course notebook](final%20code/code.ipynb) · [Experiment evidence](docs/experiments.md) · [Reproduction guide](docs/reproduction.md)
+**Start here:** [Project report](docs/report.pdf) · [Final course notebook](final%20code/code.ipynb) · [Experiment evidence](docs/experiments.md) · [Reproduction guide](docs/reproduction.md) · [한국어 이해 가이드](docs/project-guide-ko.md)
 
 ## Project at a glance
 
 | Item | Description |
 |---|---|
 | Task | Predict a binary popularity label and class probability |
-| Course training data | 22,200 rows, evidenced by the final notebook split: 16,650 + 5,550 |
+| Course training data | 22,200 rows × 49 columns; 46 predictors after excluding id, shares and y |
 | Models explored | Random Forest and XGBoost |
 | Evaluation | Accuracy, F1, ROC AUC; course score is their arithmetic mean |
 | Team | Yunwoo Choi, Seojeong Cho, Ingyeong Yang, Jiwon Kang |
-| Current reproducibility | Original data absent; saved outputs can be inspected, historical training cannot yet be rerun |
+| Current reproducibility | Supplied course CSVs verified; two new baseline runs completed on 2026-10-14; raw CSVs are not distributed here |
+| Course test data | 9,515 rows × 47 columns; no ground-truth labels supplied |
 
-## Recorded experiments
+## Historical experiments
 
 These are **historical notebook outputs**, not newly reproduced scores or a controlled head-to-head comparison. Different preprocessing and split configurations were used.
 
@@ -52,21 +53,31 @@ Contributed to missing-value treatment and categorical encoding, analysis of sel
 | `docs/report.pdf` | Original course report |
 | `results/figures/` | Existing feature-importance figures |
 
-### New baseline
+### Verified maintenance baselines (2026-10-14)
 
-After restoring the original course `train.csv`, run from the repository root:
+These are **new experiments**, separate from the original coursework. Both use the same stratified 80/20 split (17,760 training / 4,440 validation rows), seed 42, training-fitted median/constant imputation and one-hot encoding, and threshold 0.5. Fixed model configurations were adapted from archival settings; no new grid search or threshold optimization was performed.
+
+| Model | Accuracy | F1 | ROC AUC | Mean |
+|---|---:|---:|---:|---:|
+| Random Forest | 0.6653 | 0.6685 | 0.7239 | 0.6859 |
+| Xgboost | 0.6671 | 0.6664 | 0.7243 | 0.6859 |
+
+The AUC difference is approximately 0.00042 on one split; it does not establish a reliable winner. This split may overlap earlier exploratory validation data and is not a new untouched benchmark. [Machine-readable run evidence](results/verified-2026-10-14/README.md).
+
+Place your supplied CSVs in `data/`, then run from the repository root:
 
 ```bash
 python -m pip install -r requirements.txt
-python scripts/train_baseline.py --train data/train.csv
+python scripts/train_baseline.py --train data/train.csv --test data/test.csv --model random_forest
+python scripts/train_baseline.py --train data/train.csv --test data/test.csv --model xgboost
 ```
 
-The script uses a stratified 80/20 split, seed 42, a fixed Random Forest configuration, and threshold 0.5. It writes metrics and validation predictions under `results/new-baseline/`. This is a new, simplified baseline; it does not reproduce the historical score. Only synthetic smoke checks have been performed during repository maintenance.
+Outputs go to `results/new-baseline/<model>/`. With `--test`, the script additionally refits on all 22,200 labeled rows and writes 9,515 `id,y_predict,y_prob` predictions. Test labels were not supplied, so **no test score is reported**. Raw CSVs and row-level predictions are not committed; the recorded metrics, data hashes, split hash and versions are committed.
 
 ## Interpretation and next steps
 
-- Recover the original course data and verify the exact label rule against the assignment.
-- Compare models on the same split, fitting preprocessing inside each training fold.
+- Retain the supplied CSVs locally; the label rule has been verified against their actual labels.
+- Extend the completed same-split baseline comparison with training-fold-only tuning and an untouched evaluation partition.
 - Select hyperparameters and thresholds without using the final evaluation partition.
 - Treat feature importance as model association, not a causal explanation of sharing behavior.
 
