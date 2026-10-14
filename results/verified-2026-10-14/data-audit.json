@@ -1,0 +1,23 @@
+{
+  "verified_date": "2026-10-14",
+  "train_shape": [
+    22200,
+    49
+  ],
+  "test_shape": [
+    9515,
+    47
+  ],
+  "predictor_count": 46,
+  "label_rule": "y = 1 if shares > 1400, else 0",
+  "label_mismatch_count": 0,
+  "shares_equal_1400_rows": 901,
+  "class_counts": {
+    "0": 11196,
+    "1": 11004
+  },
+  "train_sha256": "155ca651b41a62fa0d812e52cc2ce81d6da49a8cf9a04a6860fd8618120a3ca4",
+  "test_sha256": "98aff81b7517d6c052f8a71b07628368fad307bcaa8c2238ab7c6488cc21c66a",
+  "test_has_labels": false,
+  "raw_data_committed": false
+}

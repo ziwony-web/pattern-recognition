@@ -1,0 +1,8 @@
+{
+  "fit_rows": 22200,
+  "prediction_rows": 9515,
+  "test_sha256": "98aff81b7517d6c052f8a71b07628368fad307bcaa8c2238ab7c6488cc21c66a",
+  "threshold": 0.5,
+  "test_metrics": null,
+  "note": "Full-data refit; no test labels supplied, so no test performance is reported."
+}
