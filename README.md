@@ -38,7 +38,7 @@ The Random Forest notebook uses an 80/20 split with seed 42 after preprocessing;
 
 The final course pipeline also clips numerical values at the 1st/99th percentiles. Some historical preprocessing is fitted before the validation split; this needs correction in a rerun.
 
-## Jiwon Kang's contribution
+## My contribution
 
 Contributed to missing-value treatment and categorical encoding, analysis of selected features, performance comparison, and preparation of explanations for the team report. Team-level model results are reported above; ownership of every modeling experiment is not attributed to one member.
 
